@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Circular Air";
+  src: url("./fonts/Circular_Air-Book.ttf");
+  src: local("Circular Air Book"), local("Circular Air"),
+    url("./fonts/Circular_Air-Book.woff") format("woff"),
+    url("./fonts/Circular_Air-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular Air";
+  src: url("./fonts/Circular_Air-Bold.ttf");
+  src: local("Circular Air Bold"), local("Circular Air"),
+    url("./fonts/Circular_Air-Bold.woff") format("woff"),
+    url("./fonts/Circular_Air-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular Air";
+  src: url("./fonts/Circular_Air-Light.ttf");
+  src: local("Circular Air Light"), local("Circular Air"),
+    url("./fonts/Circular_Air-Light.woff") format("woff"),
+    url("./fonts/Circular_Air-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
