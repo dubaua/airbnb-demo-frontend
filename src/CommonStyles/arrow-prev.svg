@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-prev</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow-prev" transform="translate(5.000000, 9.000000) scale(-1, 1) translate(-5.000000, -9.000000) " fill-rule="nonzero" fill="#000000">
+            <g id="Canvas">
+                <g id="Shape">
+                    <g id="path0_fill-link">
+                        <path d="M0.292725,1.70723 C0.0401386,1.45446 -0.0584125,1.08614 0.0341954,0.741012 C0.126803,0.395883 0.396501,0.126376 0.741695,0.0340124 C1.08689,-0.0583514 1.45514,0.04046 1.70773,0.293225 L9.70273,8.29323 C10.0931,8.68373 10.0931,9.31673 9.70273,9.70723 L1.70773,17.7072 C1.45514,17.96 1.08689,18.0588 0.741695,17.9664 C0.396501,17.8741 0.126803,17.6046 0.0341954,17.2594 C-0.0584125,16.9143 0.0401386,16.546 0.292725,16.2932 L7.58273,9.00023 L0.292725,1.70723 Z" id="path0_fill"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
