@@ -16,10 +16,41 @@ import {
 } from "../CommonStyles";
 import Preview from "../Preview";
 
-import Pic1 from "./pic-1.png";
-import Pic2 from "./pic-2.png";
-import Pic3 from "./pic-3.png";
-import Pic4 from "./pic-4.png";
+import pic1 from "./pic-1.png";
+import pic2 from "./pic-2.png";
+import pic3 from "./pic-3.png";
+import pic4 from "./pic-4.png";
+
+const cards = [
+  {
+    title: "Chumley’s",
+    about: "About $60 per person",
+    label: "Speakeasy",
+    url: "chumleys",
+    imageUrl: pic4
+  },
+  {
+    title: "Hanjan",
+    about: "About $50 per person",
+    label: "Korean gastropub",
+    url: "hanjan",
+    imageUrl: pic1
+  },
+  {
+    title: "Prime Meats",
+    about: "About $55 per person",
+    label: "German american",
+    url: "prime-meats",
+    imageUrl: pic2
+  },
+  {
+    title: "Seaprice",
+    about: "About $70 per person",
+    label: "Fine seafood",
+    url: "seaprice",
+    imageUrl: pic3
+  }
+];
 
 export default () => {
   return (
@@ -38,38 +69,16 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic4} />
-              <Label>Speakeasy</Label>
-              <TitleH3 accent>Chumley’s</TitleH3>
-              <About accent>About $60 per person</About>
-            </Card>
-          </Col>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic1} />
-              <Label>Korean gastropub</Label>
-              <TitleH3 accent>Hanjan</TitleH3>
-              <About accent>About $50 per person</About>
-            </Card>
-          </Col>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic2} />
-              <Label>German american</Label>
-              <TitleH3 accent>Prime Meats</TitleH3>
-              <About accent>About $55 per person</About>
-            </Card>
-          </Col>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic3} />
-              <Label>Fine seafood</Label>
-              <TitleH3 accent>Seaprice</TitleH3>
-              <About accent>About $70 per person</About>
-            </Card>
-          </Col>
+          {cards.map((card, index) => (
+            <Col xs={6} md={4} lg={3} key={index.toString()}>
+              <Card href={card.url}>
+                <Preview src={card.imageUrl} />
+                <Label>{card.label}</Label>
+                <TitleH3 accent>{card.title}</TitleH3>
+                <About accent>{card.about}</About>
+              </Card>
+            </Col>
+          ))}
           <Prev />
           <Next />
         </Slider>

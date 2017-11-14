@@ -142,7 +142,12 @@ export const Link = styled.a`
   }
 `;
 
-export const Card = styled.div`overflow: hidden;`;
+export const Card = styled.a`
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+`;
 export const Next = styled.div`
   width: 40px;
   height: 40px;

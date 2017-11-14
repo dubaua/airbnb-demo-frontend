@@ -16,9 +16,48 @@ import {
 import Preview from "../Preview";
 import Rating from "../Rating";
 
-import Pic1 from "./pic-1.png";
-import Pic2 from "./pic-2.png";
-import Pic3 from "./pic-3.png";
+import pic1 from "./pic-1.png";
+import pic2 from "./pic-2.png";
+import pic3 from "./pic-3.png";
+
+const cards = [
+  {
+    title: "La Salentina, see, nature &amp; relax",
+    about: "Entire house · 9 beds",
+    price: 82,
+    rating: {
+      stars: 5,
+      counter: 97,
+      suffix: " · Superhost"
+    },
+    url: "la-salentina-see-nature-and-relax",
+    imageUrl: pic1
+  },
+  {
+    title: "Your private 3 bedr. riad and exclusive sauna long text",
+    about: "Entire house · 5 beds",
+    price: 82,
+    rating: {
+      stars: 5,
+      counter: 161,
+      suffix: " · Superhost"
+    },
+    url: "your-private-3-bedr-riad-and-exclusive-sauna",
+    imageUrl: pic2
+  },
+  {
+    title: "Dreamy Tropical Tree House",
+    about: "Entire house · 1 bed",
+    price: 200,
+    rating: {
+      stars: 5,
+      counter: 364,
+      suffix: " · Superhost"
+    },
+    url: "dreamy-tropical-tree-house",
+    imageUrl: pic3
+  }
+];
 
 export default () => {
   return (
@@ -37,34 +76,18 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          <Col lg={4} md={5} xs={8}>
-            <Card>
-              <Preview src={Pic2} />
-              <TitleH3 cropped>
-                $82 La Salentina, see, nature &amp; relax
-              </TitleH3>
-              <About>Entire house · 9 beds</About>
-              <Rating stars="5" counter="97" suffix="· Superhost" />
-            </Card>
-          </Col>
-          <Col lg={4} md={5} xs={8}>
-            <Card>
-              <Preview src={Pic1} />
-              <TitleH3 cropped>
-                $82 Your private 3 bedr. riad and exclusive sauna long text
-              </TitleH3>
-              <About>Entire house · 5 beds</About>
-              <Rating stars="5" counter="161" suffix="· Superhost" />
-            </Card>
-          </Col>
-          <Col lg={4} md={5} xs={8}>
-            <Card>
-              <Preview src={Pic3} />
-              <TitleH3 cropped>$200 Dreamy Tropical Tree House</TitleH3>
-              <About>Entire house · 1 bed</About>
-              <Rating stars="5" counter="364" suffix="· Superhost" />
-            </Card>
-          </Col>
+          {cards.map((card, index) => (
+            <Col xs={8} md={5} lg={4} key={index.toString()}>
+              <Card href={card.url}>
+                <Preview src={card.imageUrl} />
+                <TitleH3 cropped>
+                  ${card.price} {card.title}
+                </TitleH3>
+                <About>{card.about}</About>
+                <Rating data={card.rating} />
+              </Card>
+            </Col>
+          ))}
           <Prev />
           <Next />
         </Slider>

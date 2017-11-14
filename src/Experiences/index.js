@@ -16,10 +16,57 @@ import {
 import Preview from "../Preview";
 import Rating from "../Rating";
 
-import Pic1 from "./pic-1.png";
-import Pic2 from "./pic-2.png";
-import Pic3 from "./pic-3.png";
-import Pic4 from "./pic-4.png";
+import pic1 from "./pic-1.png";
+import pic2 from "./pic-2.png";
+import pic3 from "./pic-3.png";
+import pic4 from "./pic-4.png";
+
+const cards = [
+  {
+    title: "Forest therapy",
+    price: 29,
+    rating: {
+      stars: 5,
+      counter: 44,
+      suffix: "reviews"
+    },
+    url: "forest-therapy",
+    imageUrl: pic1
+  },
+  {
+    title: "Whale watching",
+    price: 69,
+    rating: {
+      stars: 5,
+      counter: 44,
+      suffix: "reviews"
+    },
+    url: "whale-watching",
+    imageUrl: pic2
+  },
+  {
+    title: "Table Mountain Summit, Cable Car Down",
+    price: 69,
+    rating: {
+      stars: 5,
+      counter: 44,
+      suffix: "reviews"
+    },
+    url: "table-mountain-summit-cable-car-down",
+    imageUrl: pic3
+  },
+  {
+    title: "Salsa Night",
+    price: 50,
+    rating: {
+      stars: 5,
+      counter: 44,
+      suffix: "reviews"
+    },
+    url: "salsa-night",
+    imageUrl: pic4
+  }
+];
 
 export default () => {
   return (
@@ -38,42 +85,17 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic1} />
-              <TitleH3>
-                $29 <Muted>Forest therapy</Muted>
-              </TitleH3>
-              <Rating stars="5" counter="44" suffix="reviews" />
-            </Card>
-          </Col>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic2} />
-              <TitleH3>
-                $69 <Muted>Whale watching</Muted>
-              </TitleH3>
-              <Rating stars="5" counter="46" suffix="reviews" />
-            </Card>
-          </Col>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic3} />
-              <TitleH3>
-                $69 <Muted>Table Mountain Summit, Cable Car Down</Muted>
-              </TitleH3>
-              <Rating stars="5" counter="44" suffix="reviews" />
-            </Card>
-          </Col>
-          <Col lg={3} md={4} xs={6}>
-            <Card>
-              <Preview src={Pic4} />
-              <TitleH3>
-                $50 <Muted>Salsa Night</Muted>
-              </TitleH3>
-              <Rating stars="5" counter="44" suffix="reviews" />
-            </Card>
-          </Col>
+          {cards.map((card, index) => (
+            <Col xs={6} md={4} lg={3} key={index.toString()}>
+              <Card href={card.url}>
+                <Preview src={card.imageUrl} />
+                <TitleH3>
+                  {card.price} <Muted>{card.title}</Muted>
+                </TitleH3>
+                <Rating data={card.rating} />
+              </Card>
+            </Col>
+          ))}
           <Prev />
           <Next />
         </Slider>

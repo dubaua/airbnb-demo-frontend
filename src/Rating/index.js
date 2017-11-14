@@ -6,14 +6,14 @@ class Rating extends React.Component {
   render() {
     return (
       <Wrapper>
-        {/* {this.props.stars} */}
+        {/* {this.props.data.stars} */}
         <Star src={Icon} />
         <Star src={Icon} />
         <Star src={Icon} />
         <Star src={Icon} />
         <Star src={Icon} />
         <Details>
-          {this.props.counter} {this.props.suffix}
+          {this.props.data.counter} {this.props.data.suffix}
         </Details>
       </Wrapper>
     );

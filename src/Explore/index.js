@@ -8,10 +8,30 @@ import {
   Slider
 } from "../CommonStyles";
 import Preview from "../Preview";
-import { Pad, Title, Image } from "./styled";
-import Pic1 from "./pic-1.png";
-import Pic2 from "./pic-2.png";
-import Pic3 from "./pic-3.png";
+import { Link, Title, Image } from "./styled";
+
+// can I make it less ugly?
+import pic1 from "./pic-1.png";
+import pic2 from "./pic-2.png";
+import pic3 from "./pic-3.png";
+
+const cards = [
+  {
+    title: "Homes",
+    url: "homes",
+    imageUrl: pic1
+  },
+  {
+    title: "Experiences",
+    url: "experiences",
+    imageUrl: pic2
+  },
+  {
+    title: "Restaurants",
+    url: "restaurants",
+    imageUrl: pic3
+  }
+];
 
 export default () => {
   return (
@@ -23,30 +43,16 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          <Col lg={4} md={5} xs={6}>
-            <Pad>
-              <Image>
-                <Preview src={Pic1} />
-              </Image>
-              <Title>Homes</Title>
-            </Pad>
-          </Col>
-          <Col lg={4} md={5} xs={6}>
-            <Pad>
-              <Image>
-                <Preview src={Pic2} />
-              </Image>
-              <Title>Experiences</Title>
-            </Pad>
-          </Col>
-          <Col lg={4} md={5} xs={6}>
-            <Pad>
-              <Image>
-                <Preview src={Pic3} />
-              </Image>
-              <Title>Restaurants</Title>
-            </Pad>
-          </Col>
+          {cards.map((card, index) => (
+            <Col xs={6} md={5} lg={4} key={index.toString()}>
+              <Link href={card.url}>
+                <Image>
+                  <Preview src={card.imageUrl} />
+                </Image>
+                <Title>{card.title}</Title>
+              </Link>
+            </Col>
+          ))}
         </Slider>
       </Container>
     </Section>
