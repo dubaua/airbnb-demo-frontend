@@ -27,10 +27,9 @@ export const Container = styled.div`
   ${props =>
     props.scroll &&
     css`
-      overflow-x: auto;
-      overflow-y: hidden;
+      overflow: auto;
       @media only screen and (min-width: 992px) {
-        overflow-x: inherit;
+        overflow: inherit;
       }
     `};
 `;
