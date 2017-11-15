@@ -12,7 +12,9 @@ export default () => {
         <Row middle="xs">
           <Col lg={1} md={1} xs={2}>
             <Dropdown>
-              <Logo src={logo} />
+              <Link href="/">
+                <Logo src={logo} />
+              </Link>
               <Arrow src={arrow} />
             </Dropdown>
           </Col>

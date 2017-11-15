@@ -1,27 +1,23 @@
 import React from "react";
 import { Row, Col } from "react-flexbox-grid";
+import Card from "./Card";
 import {
   SectionHead,
   Container,
   TitleH2,
-  TitleH3,
-  Muted,
   Section,
   SeeAll,
   Slider,
-  Card,
   Next,
   Prev
 } from "../CommonStyles";
-import Preview from "../Preview";
-import Rating from "../Rating";
 
 import pic1 from "./pic-1.png";
 import pic2 from "./pic-2.png";
 import pic3 from "./pic-3.png";
 import pic4 from "./pic-4.png";
 
-const cards = [
+const experiences = [
   {
     title: "Forest therapy",
     price: 29,
@@ -85,15 +81,9 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          {cards.map((card, index) => (
+          {experiences.map((experience, index) => (
             <Col xs={6} md={4} lg={3} key={index.toString()}>
-              <Card href={card.url}>
-                <Preview src={card.imageUrl} />
-                <TitleH3>
-                  {card.price} <Muted>{card.title}</Muted>
-                </TitleH3>
-                <Rating data={card.rating} />
-              </Card>
+              <Card data={experience} />
             </Col>
           ))}
           <Prev />

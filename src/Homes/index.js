@@ -1,26 +1,22 @@
 import React from "react";
 import { Row, Col } from "react-flexbox-grid";
+import Card from "./Card";
 import {
   SectionHead,
   Container,
   Slider,
   TitleH2,
-  TitleH3,
-  About,
   Section,
   SeeAll,
-  Card,
   Next,
   Prev
 } from "../CommonStyles";
-import Preview from "../Preview";
-import Rating from "../Rating";
 
 import pic1 from "./pic-1.png";
 import pic2 from "./pic-2.png";
 import pic3 from "./pic-3.png";
 
-const cards = [
+const homes = [
   {
     title: "La Salentina, see, nature &amp; relax",
     about: "Entire house · 9 beds",
@@ -76,16 +72,9 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          {cards.map((card, index) => (
+          {homes.map((home, index) => (
             <Col xs={8} md={5} lg={4} key={index.toString()}>
-              <Card href={card.url}>
-                <Preview src={card.imageUrl} />
-                <TitleH3 cropped>
-                  ${card.price} {card.title}
-                </TitleH3>
-                <About>{card.about}</About>
-                <Rating data={card.rating} />
-              </Card>
+              <Card data={home} />
             </Col>
           ))}
           <Prev />

@@ -4,6 +4,8 @@ import ArrowRight from "./arrow-right.svg";
 import ArrowNext from "./arrow-next.svg";
 import ArrowPrev from "./arrow-prev.svg";
 
+export const Section = styled.section`margin: 48px 0;`;
+
 export const Container = styled.div`
   box-sizing: border-box;
   margin-left: auto;
@@ -26,6 +28,7 @@ export const Container = styled.div`
     props.scroll &&
     css`
       overflow-x: auto;
+      overflow-y: hidden;
       @media only screen and (min-width: 992px) {
         overflow-x: inherit;
       }
@@ -35,6 +38,21 @@ export const Container = styled.div`
 export const Slider = styled(Row)`
   flex-wrap: nowrap !important;
   position: relative;
+`;
+
+export const Card = styled.a`
+  color: inherit;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  ${props =>
+    props.stock &&
+    css`
+      margin: 24px 0;
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 40px;
+      }
+    `};
 `;
 
 export const SectionHead = styled.div`padding-bottom: 24px;`;
@@ -106,8 +124,6 @@ export const Label = styled.p`
   }
 `;
 
-export const Section = styled.section`margin-top: 48px;`;
-
 export const SeeAll = styled.a`
   color: #383838;
   display: block;
@@ -142,12 +158,6 @@ export const Link = styled.a`
   }
 `;
 
-export const Card = styled.a`
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  overflow: hidden;
-`;
 export const Next = styled.div`
   width: 40px;
   height: 40px;
@@ -164,6 +174,7 @@ export const Next = styled.div`
     display: inherit;
   }
 `;
+
 export const Prev = styled.div`
   width: 40px;
   height: 40px;
@@ -179,5 +190,17 @@ export const Prev = styled.div`
   @media only screen and (min-width: 992px) {
     display: inherit;
     display: none;
+  }
+`;
+
+export const Button = styled.div`
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 16px;
+  &:not(:first-child) {
+    margin-left: 12px;
   }
 `;

@@ -1,13 +1,10 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
 import "./circular-air.css";
 import Header from "./Header";
-import Explore from "./Explore";
-import Experiences from "./Experiences";
-import Homes from "./Homes";
-import Reservations from "./Reservations";
-import Destinations from "./Destinations";
-import Footer from "./Footer";
+import Landing from "./Landing";
+import HomeList from "./HomeList";
 
 const Page = styled.div`
   font-family: "Circular Air", Helvetica, Arial, sans-serif;
@@ -17,17 +14,22 @@ const Page = styled.div`
 class App extends Component {
   render() {
     return (
-      <Page>
-        <Header />
-        <Explore />
-        <Experiences />
-        <Homes />
-        <Reservations />
-        <Destinations />
-        <Footer />
-      </Page>
+      <Router>
+        <Page>
+          <Header />
+          <Route path="/" exact component={Landing} />
+          <Route path="/homes" component={HomeList} />
+          {/* <Route component={NoMatch} /> */}
+        </Page>
+      </Router>
     );
   }
 }
+
+// const NoMatch = () => (
+//   <Container>
+//     Page not ready yet. <a href="/">Go home</a>, yankee
+//   </Container>
+// );
 
 export default App;

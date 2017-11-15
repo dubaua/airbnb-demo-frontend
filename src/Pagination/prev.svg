@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>next</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="next" transform="translate(3.000000, 5.000000) scale(-1, 1) translate(-3.000000, -5.000000) " fill-rule="nonzero" fill="#008489">
+            <g id="Canvas">
+                <g id="Shape">
+                    <g id="path0_fill-link">
+                        <path d="M0.162625,0.948459 C0.0222992,0.808033 -0.0324514,0.603412 0.0189974,0.411674 C0.0704463,0.219935 0.220278,0.070209 0.412053,0.0188958 C0.603828,-0.0324175 0.80841,0.0224778 0.948736,0.162903 L5.3904,4.60735 C5.60728,4.82429 5.60728,5.17596 5.3904,5.3929 L0.948736,9.83735 C0.80841,9.97777 0.603828,10.0327 0.412053,9.98135 C0.220278,9.93004 0.0704463,9.78032 0.0189974,9.58858 C-0.0324514,9.39684 0.0222992,9.19222 0.162625,9.05179 L4.21263,5.00013 L0.162625,0.948459 Z" id="path0_fill"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

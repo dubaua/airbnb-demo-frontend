@@ -1,17 +1,15 @@
 import React from "react";
 import { Col } from "react-flexbox-grid";
+import Card from "./Card";
 import {
   SectionHead,
   Container,
   TitleH2,
-  TitleH3,
   Section,
   Slider,
-  Card,
   Next,
   Prev
 } from "../CommonStyles";
-import Preview from "../Preview";
 
 import pic1 from "./pic-1.png";
 import pic2 from "./pic-2.png";
@@ -20,7 +18,7 @@ import pic4 from "./pic-4.png";
 import pic5 from "./pic-5.png";
 import pic6 from "./pic-6.png";
 
-const cards = [
+const destinations = [
   {
     title: "Paris",
     url: "paris",
@@ -63,12 +61,9 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          {cards.map((card, index) => (
+          {destinations.map((destination, index) => (
             <Col xs={4} md={3} lg={2} key={index.toString()}>
-              <Card href={card.url}>
-                <Preview src={card.imageUrl} />
-                <TitleH3>{card.title}</TitleH3>
-              </Card>
+              <Card data={destination} />
             </Col>
           ))}
           <Prev />

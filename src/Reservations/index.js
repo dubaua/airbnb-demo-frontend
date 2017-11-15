@@ -1,27 +1,23 @@
 import React from "react";
 import { Row, Col } from "react-flexbox-grid";
+import Card from "./Card";
 import {
   SectionHead,
   Container,
   TitleH2,
-  TitleH3,
-  About,
-  Label,
   Section,
   SeeAll,
   Slider,
-  Card,
   Next,
   Prev
 } from "../CommonStyles";
-import Preview from "../Preview";
 
 import pic1 from "./pic-1.png";
 import pic2 from "./pic-2.png";
 import pic3 from "./pic-3.png";
 import pic4 from "./pic-4.png";
 
-const cards = [
+const reservations = [
   {
     title: "Chumley’s",
     about: "About $60 per person",
@@ -69,14 +65,9 @@ export default () => {
       </Container>
       <Container scroll>
         <Slider>
-          {cards.map((card, index) => (
+          {reservations.map((reservation, index) => (
             <Col xs={6} md={4} lg={3} key={index.toString()}>
-              <Card href={card.url}>
-                <Preview src={card.imageUrl} />
-                <Label>{card.label}</Label>
-                <TitleH3 accent>{card.title}</TitleH3>
-                <About accent>{card.about}</About>
-              </Card>
+              <Card data={reservation} />
             </Col>
           ))}
           <Prev />
