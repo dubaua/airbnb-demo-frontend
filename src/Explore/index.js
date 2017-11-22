@@ -1,52 +1,40 @@
 import React from "react";
 import { Col } from "react-flexbox-grid";
-import {
-  TitleH2,
-  Section,
-  SectionHead,
-  Container,
-  Slider
-} from "../CommonStyles";
-import Preview from "../Preview";
-import { Pad, Title, Image } from "./styled";
-import Pic1 from "./pic-1.png";
-import Pic2 from "./pic-2.png";
-import Pic3 from "./pic-3.png";
+import Header from "../UI/Header";
+import { Section, Container, Slider } from "../CommonStyles";
+import Card from "./Card";
+
+const cards = [
+  {
+    title: "Homes",
+    url: "homes",
+    imageUrl: require("./pic-1.png")
+  },
+  {
+    title: "Experiences",
+    url: "experiences",
+    imageUrl: require("./pic-2.png")
+  },
+  {
+    title: "Restaurants",
+    url: "restaurants",
+    imageUrl: require("./pic-3.png")
+  }
+];
 
 export default () => {
   return (
     <Section>
       <Container>
-        <SectionHead>
-          <TitleH2>Explore Airbnb</TitleH2>
-        </SectionHead>
+        <Header>Explore Airbnb</Header>
       </Container>
       <Container scroll>
         <Slider>
-          <Col lg={4} md={5} xs={6}>
-            <Pad>
-              <Image>
-                <Preview src={Pic1} />
-              </Image>
-              <Title>Homes</Title>
-            </Pad>
-          </Col>
-          <Col lg={4} md={5} xs={6}>
-            <Pad>
-              <Image>
-                <Preview src={Pic2} />
-              </Image>
-              <Title>Experiences</Title>
-            </Pad>
-          </Col>
-          <Col lg={4} md={5} xs={6}>
-            <Pad>
-              <Image>
-                <Preview src={Pic3} />
-              </Image>
-              <Title>Restaurants</Title>
-            </Pad>
-          </Col>
+          {cards.map((card, index) => (
+            <Col xs={6} md={5} lg={4} key={index.toString()}>
+              <Card data={card} />
+            </Col>
+          ))}
         </Slider>
       </Container>
     </Section>

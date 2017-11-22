@@ -4,16 +4,17 @@ import Icon from "./star.svg";
 
 class Rating extends React.Component {
   render() {
+    const rating = this.props.data;
     return (
       <Wrapper>
-        {/* {this.props.stars} */}
+        {/* {rating.average} */}
         <Star src={Icon} />
         <Star src={Icon} />
         <Star src={Icon} />
         <Star src={Icon} />
         <Star src={Icon} />
         <Details>
-          {this.props.counter} {this.props.suffix}
+          {rating.counter} {rating.label ? "· " + rating.label : "reviews"}
         </Details>
       </Wrapper>
     );

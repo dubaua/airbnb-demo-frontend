@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import { Link as RLink } from "react-router-dom";
 
-export const Pad = styled.header`
+export const Link = styled(RLink)`
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
+  color: inherit;
+  display: block;
   overflow: hidden;
-
+  text-decoration: none;
   @media only screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -27,6 +30,9 @@ export const Title = styled.div`
 `;
 
 export const Image = styled.div`
+  width: 100%;
+  max-height: 78px;
+  overflow: hidden;
   @media only screen and (min-width: 768px) {
     max-width: 96px;
   }

@@ -1,0 +1,36 @@
+.pagination {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  display: block;
+  margin: 0 7px;
+}
+
+.pagination li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f7276;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.pagination .disabled {
+  display: none;
+}
+
+.pagination .active a {
+  background: #008489;
+  color: white;
+}
+
+.pagination .previous a,
+.pagination .next a {
+  box-shadow: inset 0 0 0 1px #008489;
+}

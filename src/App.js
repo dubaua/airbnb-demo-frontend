@@ -1,31 +1,27 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
-import "./circular-air.css";
+import "./fonts/webfontkit/circular-air.css";
 import Header from "./Header";
-import Explore from "./Explore";
-import Experiences from "./Experiences";
+import Landing from "./Landing";
 import Homes from "./Homes";
-import Reservations from "./Reservations";
-import Destinations from "./Destinations";
-import Footer from "./Footer";
 
 const Page = styled.div`
   font-family: "Circular Air", Helvetica, Arial, sans-serif;
   color: #383838;
+  padding-top: 81px;
 `;
 
 class App extends Component {
   render() {
     return (
-      <Page>
-        <Header />
-        <Explore />
-        <Experiences />
-        <Homes />
-        <Reservations />
-        <Destinations />
-        <Footer />
-      </Page>
+      <Router>
+        <Page>
+          <Header />
+          <Route exact path="/" component={Landing} />
+          <Route path="/homes" component={Homes} />
+        </Page>
+      </Router>
     );
   }
 }

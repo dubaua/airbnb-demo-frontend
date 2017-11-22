@@ -1,0 +1,38 @@
+.DayPicker {
+  background: #fff;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.CalendarMonth_caption {
+  padding-bottom: 41px;
+}
+.DayPicker_weekHeader {
+  color: #636363;
+}
+
+.CalendarDay__blocked_calendar,
+.CalendarDay__blocked_calendar:active,
+.CalendarDay__blocked_calendar:hover {
+  background: white;
+  border: 1px solid #d5d5d5;
+  color: #d5d5d5;
+}
+
+.CalendarDay_button {
+  font-size: 14px;
+}
+
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+  background: #008489;
+  border: 1px solid #008489;
+  color: white;
+}
+
+.CalendarDay__selected_span {
+  background: #00848980;
+  border: 1px solid #00848980;
+  /* color: white; */
+}

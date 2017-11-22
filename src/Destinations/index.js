@@ -1,71 +1,55 @@
 import React from "react";
 import { Col } from "react-flexbox-grid";
-import {
-  SectionHead,
-  Container,
-  TitleH2,
-  TitleH3,
-  Section,
-  Slider,
-  Card,
-  Next,
-  Prev
-} from "../CommonStyles";
-import Preview from "../Preview";
+import Header from "../UI/Header";
+import { Container, Section, Slider, Next, Prev } from "../CommonStyles";
+import Card from "./Card";
 
-import Pic1 from "./pic-1.png";
-import Pic2 from "./pic-2.png";
-import Pic3 from "./pic-3.png";
-import Pic4 from "./pic-4.png";
-import Pic5 from "./pic-5.png";
-import Pic6 from "./pic-6.png";
+const destinations = [
+  {
+    title: "Paris",
+    slug: "paris",
+    imageUrl: require("./pic-1.png")
+  },
+  {
+    title: "Miami",
+    slug: "miami",
+    imageUrl: require("./pic-2.png")
+  },
+  {
+    title: "Tokyo",
+    slug: "tokyo",
+    imageUrl: require("./pic-3.png")
+  },
+  {
+    title: "Cape town",
+    slug: "cape-town",
+    imageUrl: require("./pic-4.png")
+  },
+  {
+    title: "Seoul",
+    slug: "seoul",
+    imageUrl: require("./pic-5.png")
+  },
+  {
+    title: "Los Angeles",
+    slug: "los-angeles",
+    imageUrl: require("./pic-6.png")
+  }
+];
 
 export default () => {
   return (
     <Section>
       <Container>
-        <SectionHead>
-          <TitleH2>Featured destinations</TitleH2>
-        </SectionHead>
+        <Header>Featured destinations</Header>
       </Container>
       <Container scroll>
         <Slider>
-          <Col lg={2} md={3} xs={4}>
-            <Card>
-              <Preview src={Pic1} />
-              <TitleH3>Paris</TitleH3>
-            </Card>
-          </Col>
-          <Col lg={2} md={3} xs={4}>
-            <Card>
-              <Preview src={Pic2} />
-              <TitleH3>Miami</TitleH3>
-            </Card>
-          </Col>
-          <Col lg={2} md={3} xs={4}>
-            <Card>
-              <Preview src={Pic3} />
-              <TitleH3>Tokyo</TitleH3>
-            </Card>
-          </Col>
-          <Col lg={2} md={3} xs={4}>
-            <Card>
-              <Preview src={Pic4} />
-              <TitleH3>Cape town</TitleH3>
-            </Card>
-          </Col>
-          <Col lg={2} md={3} xs={4}>
-            <Card>
-              <Preview src={Pic5} />
-              <TitleH3>Seoul</TitleH3>
-            </Card>
-          </Col>
-          <Col lg={2} md={3} xs={4}>
-            <Card>
-              <Preview src={Pic6} />
-              <TitleH3>Los Angeles</TitleH3>
-            </Card>
-          </Col>
+          {destinations.map((destination, index) => (
+            <Col xs={4} md={3} lg={2} key={index.toString()}>
+              <Card data={destination} />
+            </Col>
+          ))}
           <Prev />
           <Next />
         </Slider>
