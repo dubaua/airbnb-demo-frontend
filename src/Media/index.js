@@ -1,0 +1,10 @@
+export const xs = "(min-width:0rem)";
+export const sm = "(min-width:576px)";
+export const md = "(min-width:768px)";
+export const lg = "(min-width:992px)";
+export const xl = "(min-width:1200px)";
+export const xsOnly = "(max-width: 575px)";
+export const smOnly = "(min-width: 576px) and (max-width: 767px)";
+export const mdOnly = "(min-width: 768px) and (max-width: 991px)";
+export const lgOnly = "(min-width: 992px) and (max-width: 1199px)";
+export const xlOnly = "(min-width: 1200px)";

@@ -6,6 +6,7 @@ class Preview extends React.Component {
     return (
       <Wrapper>
         <Image src={this.props.src} />
+        {this.props.children}
       </Wrapper>
     );
   }

@@ -5,6 +5,7 @@ import "./fonts/webfontkit/circular-air.css";
 import Header from "./Header";
 import Landing from "./Landing";
 import Homes from "./Homes";
+import Rooms from "./Rooms";
 
 const Page = styled.div`
   font-family: "Circular Air", Helvetica, Arial, sans-serif;
@@ -20,6 +21,7 @@ class App extends Component {
           <Header />
           <Route exact path="/" component={Landing} />
           <Route path="/homes" component={Homes} />
+          <Route path="/rooms" component={Rooms} />
         </Page>
       </Router>
     );
