@@ -1,49 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  background: transparent;
+export default (Button = styled.button`
+  background: #ff5a5f;
+  border-radius: 4px;
   border: none;
-  font-family: inherit;
-  font-size: 14px;
-  padding: 5px;
-  cursor: pointer;
-
-  @media only screen and (min-width: 768px) {
-    background: white;
-    box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
-    padding: 11px 16px;
-    &:not(:first-child) {
-      margin-left: 16px;
-    }
-  }
-`;
-export const XsIcon = styled.img`
-  @media only screen and (min-width: 768px) {
-    display: none;
-  }
-`;
-export const Icon = styled.img`
-  display: none;
-  @media only screen and (min-width: 768px) {
-    display: block;
-    margin-right: 12px;
-  }
-`;
-export const Label = styled.span`
-  display: none;
-  @media only screen and (min-width: 768px) {
-    display: block;
-  }
-  font-weight: ${props => (props.strong ? "bold" : "normal")};
-`;
-
-export default ({ xsIcon, icon, ...props }) => (
-  <Button>
-    {xsIcon && <XsIcon src={xsIcon} />}
-    {icon && <Icon src={icon} />}
-    <Label strong={!icon}>{props.children}</Label>
-  </Button>
-);
+  box-sizing: border-box;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font: inherit;
+  letter-spacing: 0.07em;
+  margin: 0;
+  padding: 8px 16px;
+  text-align: center;
+  width: 100%;
+`);

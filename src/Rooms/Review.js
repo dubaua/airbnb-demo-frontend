@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import flag from "./flag.svg";
 import Preview from "../Preview";
+import flag from "./flag.svg";
+import Cropped from "./Cropped";
 
 export const Wrapper = styled.div`
   padding: 24px 0;
   border-bottom: 1px solid #e4e4e4;
+  font-size: 18px;
+  &:first-child {
+    border-top: 1px solid #e4e4e4;
+  }
 `;
 
 export const Head = styled.div`
@@ -62,8 +67,6 @@ class Review extends React.Component {
 
   render() {
     const review = this.props.data;
-    const cropped = review.text.substring(0, 300) + "…";
-
     return (
       <Wrapper>
         <Head>
@@ -76,14 +79,7 @@ class Review extends React.Component {
           </Details>
           <Flag />
         </Head>
-        {review.text.length >= 300
-          ? this.state.isOpen ? review.text : cropped
-          : review.text}
-        {review.text.length >= 300 && (
-          <Button onClick={this.handleClick}>
-            {this.state.isOpen ? "Hide" : "Read more"}
-          </Button>
-        )}
+        <Cropped>{review.text}</Cropped>
       </Wrapper>
     );
   }

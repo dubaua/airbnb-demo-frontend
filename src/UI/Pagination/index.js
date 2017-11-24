@@ -23,7 +23,7 @@ class Rating extends React.Component {
           subContainerClassName={"pages pagination"}
           activeClassName={"active"}
         />
-        <More>1—6 of 100+ Rentals</More>
+        {!this.props.nomore && <More>1—6 of 100+ Rentals</More>}
       </Wrapper>
     );
   }
