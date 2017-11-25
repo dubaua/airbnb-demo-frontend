@@ -3,7 +3,9 @@ import styled from "styled-components";
 import badge from "./badge.svg";
 
 export const Wrapper = styled.div`
+  margin-bottom: 12px;
   position: relative;
+  z-index: -1;
   line-height: 0;
   & img {
     max-width: 100%;

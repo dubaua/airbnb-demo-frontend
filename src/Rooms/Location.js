@@ -5,7 +5,7 @@ import Spoiler from "./Spoiler";
 class Location extends React.Component {
   render() {
     return (
-      <Section>
+      <Section id="location">
         <H2>The neighborhood</H2>
         <p>Yudy & Victoria’s home is located in Armenia, Quindio, Colombia.</p>
         <p>

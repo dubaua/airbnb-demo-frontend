@@ -88,7 +88,7 @@ const amenitiesFull = amenities.slice(4, amenities.length);
 class Overview extends React.Component {
   render() {
     return (
-      <Section>
+      <Section id="overview">
         <Row middle="xs" bottom="md">
           <Col xs={12}>
             <ToMd>
@@ -114,9 +114,7 @@ class Overview extends React.Component {
           <Col xs={2}>
             <Host>
               <Userpic src={host} alt="Yudi & Victoria" badge />
-              <Md>
-                <div>Yudi & Victoria</div>
-              </Md>
+              <Md>Yudi & Victoria</Md>
             </Host>
           </Col>
           <Col xs={12}>

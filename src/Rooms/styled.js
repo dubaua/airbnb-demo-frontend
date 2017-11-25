@@ -5,6 +5,10 @@ import shield from "./shield.svg";
 
 export const Wrapper = styled.div`
   font-weight: 300;
+  padding-bottom: 80px;
+  @media only screen and (min-width: 992px) {
+    padding-bottom: 0;
+  }
 `;
 
 export const Section = styled.div`
@@ -25,7 +29,9 @@ export const Link = styled(RLink)`
 `;
 
 export const Nav = styled.div`
-  padding-top: 16px;
+  background: white;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 16px 0;
 `;
 
 export const Anchor = styled.a`
@@ -113,15 +119,11 @@ export const Amenitiy = styled.div`
   }
 `;
 export const Host = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   max-width: 48px;
   text-align: center;
   @media only screen and (min-width: 768px) {
     max-width: 64px;
-  }
-  & div {
-    margin-top: 12px;
   }
 `;
 
@@ -163,18 +165,24 @@ export const H2 = styled.h2`
 `;
 
 export const Pad = styled.div`
-  margin-top: 16px;
+  margin: 16px 0;
   padding: 16px 24px;
   border: 1px solid #e4e4e4;
+  box-sizing: border-box;
 `;
 
 export const BookBottom = styled.div`
+  align-items: center;
+  background: white;
   border-top: 1px solid #e4e4e4;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  left: 0;
   margin-top: 16px;
   padding: 12px 8px;
+  position: fixed;
+  right: 0;
 `;
 
 export const Report = styled.button`
@@ -184,20 +192,4 @@ export const Report = styled.button`
   border: none;
   font: inherit;
   color: #0f7276;
-`;
-
-export const Button = styled.button`
-  background: #ff5a5f;
-  border-radius: 4px;
-  border: none;
-  box-sizing: border-box;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  font: inherit;
-  letter-spacing: 0.07em;
-  margin: 0;
-  padding: 8px 16px;
-  text-align: center;
-  width: ${props => (props.full ? "100%" : "auto")};
 `;

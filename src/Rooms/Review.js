@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
 export const Head = styled.div`
   display: flex;
   margin-bottom: 16px;
-  position: relative;
 `;
 
 export const Userpic = styled.div`

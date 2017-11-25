@@ -69,7 +69,7 @@ const Button = styled.a`
 class Host extends React.Component {
   render() {
     return (
-      <Section>
+      <Section id="theHost">
         <Row>
           <Col xs={9} md={10}>
             <H2>Hosted by Yudy & Victoria</H2>

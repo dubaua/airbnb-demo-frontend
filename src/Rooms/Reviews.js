@@ -106,7 +106,7 @@ const Search = styled.input`
 class Reviews extends React.Component {
   render() {
     return (
-      <Section>
+      <Section id="reviews">
         <Header>
           <Row between="xs" bottom="xs">
             <Col xs={12} md={8}>

@@ -1,12 +1,12 @@
-import React from "react";
 import styled from "styled-components";
 
-export default (Button = styled.button`
+export default styled.button`
   background: #ff5a5f;
   border-radius: 4px;
   border: none;
   box-sizing: border-box;
   color: white;
+  cursor: pointer;
   font-size: 16px;
   font-weight: bold;
   font: inherit;
@@ -14,5 +14,11 @@ export default (Button = styled.button`
   margin: 0;
   padding: 8px 16px;
   text-align: center;
-  width: 100%;
-`);
+  width: ${props => (props.full ? "100%" : "auto")};
+  &:hover {
+    background: #f53d43;
+  }
+  &:active {
+    background: #ed262c;
+  }
+`;

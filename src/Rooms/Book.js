@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Highlight from "./Highlight";
 import Summary from "./Summary";
-import { Button } from "./styled";
+import Button from "./Button";
 
 const Wrapper = styled.div``;
-const Row = styled.div`
+const Split = styled.div`
   display: flex;
 `;
-const Col = styled.div`
+const Half = styled.div`
   flex-basis: 50%;
   max-width: 50%;
 `;
@@ -45,16 +45,16 @@ class Book extends React.Component {
       <Wrapper>
         <Summary />
         <Form>
-          <Row>
-            <Col>
+          <Split>
+            <Half>
               <Label>Check In</Label>
               <Filter>mm/dd/yyyy</Filter>
-            </Col>
-            <Col>
+            </Half>
+            <Half>
               <Label>Check Out</Label>
               <Filter last>mm/dd/yyyy</Filter>
-            </Col>
-          </Row>
+            </Half>
+          </Split>
           <Label>Guests</Label>
           <Filter>1 guest</Filter>
           <Go>

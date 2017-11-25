@@ -32,18 +32,16 @@ class Cropped extends React.Component {
   render() {
     const content = this.props.children;
     const cropped = content.substring(0, this.props.limit) + "…";
-    return (
-      <div>
-        {content.length >= this.props.limit
-          ? this.state.isOpen ? content : cropped
-          : content}
-        {content.length >= this.props.limit && (
+    if (content.length < this.props.limit) return content;
+    else
+      return (
+        <div>
+          {this.state.isOpen ? content : cropped}
           <Button onClick={this.handleClick}>
             {this.state.isOpen ? "Hide" : this.props.label}
           </Button>
-        )}
-      </div>
-    );
+        </div>
+      );
   }
 }
 export default Cropped;
