@@ -44,7 +44,7 @@ class Price extends React.Component {
       },
       () => {
         this.onPriceChange(this.state.priceRange);
-        this.props.toggleFilter();
+        this.props.toggleFilter(null);
       }
     );
   };

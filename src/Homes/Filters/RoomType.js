@@ -89,7 +89,7 @@ class RoomType extends React.Component {
       },
       () => {
         this.onRoomTypeChange(this.state.roomType);
-        this.props.toggleFilter();
+        this.props.toggleFilter(null);
       }
     );
   };

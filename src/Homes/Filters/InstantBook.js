@@ -50,7 +50,7 @@ class Price extends React.Component {
       },
       () => {
         this.onInstantBookChange(this.state.instantBook);
-        this.props.toggleFilter();
+        this.props.toggleFilter(null);
       }
     );
   };

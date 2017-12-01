@@ -68,7 +68,7 @@ class Guests extends React.Component {
       },
       () => {
         this.updateLabel(this.state.guests);
-        this.props.toggleFilter();
+        this.props.toggleFilter(null);
       }
     );
   };

@@ -47,7 +47,7 @@ class Dates extends React.Component {
       },
       () => {
         this.onDatesChange(this.state.dates);
-        this.props.toggleFilter();
+        this.props.toggleFilter(null);
       }
     );
   };

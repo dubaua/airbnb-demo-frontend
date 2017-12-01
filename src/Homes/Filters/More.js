@@ -111,7 +111,7 @@ class Price extends React.Component {
         facilities: this.props.facilities
       },
       () => {
-        this.props.toggleFilter();
+        this.props.toggleFilter(null);
       }
     );
   };
