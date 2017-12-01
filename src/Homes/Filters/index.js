@@ -92,14 +92,9 @@ class Filters extends React.Component {
   };
 
   toggleFilter = filterId => {
-    this.setState(
-      {
-        currentFilter: this.state.currentFilter === filterId ? null : filterId
-      },
-      () => {
-        console.log(this.state.currentFilter);
-      }
-    );
+    this.setState({
+      currentFilter: this.state.currentFilter === filterId ? null : filterId
+    });
   };
 
   applyDates = dates => {

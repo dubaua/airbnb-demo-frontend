@@ -59,7 +59,8 @@ const Info = styled.div`
   }
 `;
 
-const CheckboxLabel = styled.div`
+const CheckboxLabel = styled.label`
+  cursor: pointer;
   font-size: 18px;
   margin-left: 12px;
 `;
@@ -191,12 +192,15 @@ class Price extends React.Component {
                   <Col xs={6} key={index.toString()}>
                     <Filter>
                       <Checkbox
+                        forId={"amenities" + index.toString()}
                         resource={"amenities"}
                         index={index}
                         value={amenitiy.value}
                         onChange={this.onArrayChange}
                       />
-                      <CheckboxLabel>{amenitiy.title}</CheckboxLabel>
+                      <CheckboxLabel htmlFor={"amenities" + index.toString()}>
+                        {amenitiy.title}
+                      </CheckboxLabel>
                     </Filter>
                   </Col>
                 ))}
@@ -209,12 +213,17 @@ class Price extends React.Component {
                       <Col xs={6} key={index.toString()}>
                         <Filter>
                           <Checkbox
+                            forId={"amenities" + index.toString()}
                             resource={"amenities"}
                             index={index}
                             value={amenitiy.value}
                             onChange={this.onArrayChange}
                           />
-                          <CheckboxLabel>{amenitiy.title}</CheckboxLabel>
+                          <CheckboxLabel
+                            htmlFor={"amenities" + index.toString()}
+                          >
+                            {amenitiy.title}
+                          </CheckboxLabel>
                         </Filter>
                       </Col>
                     ))}
@@ -227,12 +236,16 @@ class Price extends React.Component {
                   <Col xs={6} key={index.toString()}>
                     <Filter>
                       <Checkbox
+                        forId={"facilities" + index.toString()}
                         resource={"facilities"}
                         index={index}
                         value={facility.value}
                         onChange={this.onArrayChange}
                       />
-                      <CheckboxLabel>{facility.title}</CheckboxLabel>
+                      forId={"facilities" + index.toString()}
+                      <CheckboxLabel htmlFor={"amenities" + index.toString()}>
+                        {facility.title}
+                      </CheckboxLabel>
                     </Filter>
                   </Col>
                 ))}
@@ -245,12 +258,18 @@ class Price extends React.Component {
                       <Col xs={6} key={index.toString()}>
                         <Filter>
                           <Checkbox
+                            forId={"facilities" + index.toString()}
                             resource={"facilities"}
                             index={index}
                             value={facility.value}
                             onChange={this.onArrayChange}
                           />
-                          <CheckboxLabel>{facility.title}</CheckboxLabel>
+                          forId={"facilities" + index.toString()}
+                          <CheckboxLabel
+                            htmlFor={"amenities" + index.toString()}
+                          >
+                            {facility.title}
+                          </CheckboxLabel>
                         </Filter>
                       </Col>
                     ))}
