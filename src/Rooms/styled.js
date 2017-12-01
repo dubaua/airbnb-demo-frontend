@@ -145,6 +145,7 @@ export const Cancellation = styled.div`
   background: url(${shield}) right center no-repeat;
   padding-right: 52px;
 `;
+// move it to commond styles
 export const Hr = styled.hr`
   border: none;
   margin: 16px 0;

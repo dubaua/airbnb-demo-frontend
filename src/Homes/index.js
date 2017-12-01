@@ -1,12 +1,11 @@
 import React from "react";
 import { Row, Col } from "react-flexbox-grid";
-import Filter from "../UI/Filter";
-import Datepicker from "../UI/Datepicker";
-import Pagination from "../UI/Pagination";
-import Card from "../Homes/Card";
 import { Container } from "../CommonStyles";
+import { More, Main, MapIcon } from "./styled";
+import Filters from "./Filters";
+import Card from "../Homes/Card";
+import Pagination from "../UI/Pagination";
 import GoogleMap from "../GoogleMap";
-import { Filters, More, Main, MapIcon } from "./styled";
 
 const homes = [
   {
@@ -87,24 +86,7 @@ class Homelist extends React.Component {
   render() {
     return (
       <div>
-        <Filters>
-          <Container>
-            <Filter label="Dates">
-              <Datepicker />
-            </Filter>
-            <Filter label="Guests">Guests filter</Filter>
-            <Filter mdOnly label="Room type">
-              Room type options
-            </Filter>
-            <Filter mdOnly label="Price">
-              Price options
-            </Filter>
-            <Filter mdOnly label="Instant book">
-              Instant book options
-            </Filter>
-            <Filter label="More filters">More filters options</Filter>
-          </Container>
-        </Filters>
+        <Filters />
         <Main>
           <Container>
             <Row>

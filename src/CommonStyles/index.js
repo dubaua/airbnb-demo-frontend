@@ -97,3 +97,8 @@ export const Button = styled.button`
     margin-left: 12px;
   }
 `;
+export const Hr = styled.hr`
+  border: none;
+  margin: 16px 0;
+  border-bottom: 1px solid #e4e4e4;
+`;

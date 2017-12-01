@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "react-flexbox-grid";
 import { Section, H2, Subtitle } from "./styled";
-import Cropped from "./Cropped";
+import Cropped from "../UI/Cropped";
 import Userpic from "./Userpic";
 import verified from "./verified.png";
 import host from "./host.png";

@@ -17,8 +17,8 @@ import {
   Hr,
   Dash
 } from "./styled";
-import Spoiler from "./Spoiler";
-import Cropped from "./Cropped";
+import Spoiler from "../UI/Spoiler";
+import Cropped from "../UI/Cropped";
 import Userpic from "./Userpic";
 import Highlight from "./Highlight";
 

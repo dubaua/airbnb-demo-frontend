@@ -31,17 +31,6 @@ export const About = styled.p`
   font-weight: 200;
 `;
 
-export const Filters = styled.section`
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-  background: white;
-  position: fixed;
-  top: 81px;
-  left: 0;
-  right: 0;
-  z-index: 1;
-`;
-
 export const More = styled.div`
   margin: 36px 0 24px;
   color: #636363;
@@ -52,6 +41,7 @@ export const Main = styled.div`
   padding-top: 58px;
   padding-bottom: 64px;
   position: relative;
+  z-index: 0;
   @media only screen and (min-width: 768px) {
     padding-bottom: 10px;
   }

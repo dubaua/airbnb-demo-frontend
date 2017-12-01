@@ -1,6 +1,6 @@
 import React from "react";
 import { Section, H2 } from "./styled";
-import Spoiler from "./Spoiler";
+import Spoiler from "../UI/Spoiler";
 
 class Location extends React.Component {
   render() {

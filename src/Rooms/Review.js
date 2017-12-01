@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Preview from "../Preview";
 import flag from "./flag.svg";
-import Cropped from "./Cropped";
+import Cropped from "../UI/Cropped";
 
 export const Wrapper = styled.div`
   padding: 24px 0;

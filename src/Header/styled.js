@@ -10,17 +10,21 @@ export const Header = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
 `;
 
-export const LogoLink = styled(RLink)`display: block;`;
+export const LogoLink = styled(RLink)`
+  display: block;
+`;
 
 export const Logo = styled.img`
   height: 32px;
   width: 30px;
 `;
 
-export const Dropdown = styled.div`position: relative;`;
+export const Dropdown = styled.div`
+  position: relative;
+`;
 
 export const Arrow = styled.img`
   position: absolute;
