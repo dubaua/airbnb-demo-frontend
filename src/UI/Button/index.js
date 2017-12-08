@@ -13,7 +13,4 @@ export const Button = styled.button`
   display: inline-block;
   font-size: 14px;
   padding: 7px 15px;
-  &:focus {
-    outline: none;
-  }
 `;

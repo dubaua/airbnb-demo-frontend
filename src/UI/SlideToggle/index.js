@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Box = styled.div`
+const Box = styled.button`
   width: 64px;
   height: 40px;
   border: 1px solid;
@@ -50,23 +50,22 @@ const Slider = styled.div`
 `;
 
 class SlideToggle extends React.Component {
-  state = {
-    isChecked: this.props.value
-  };
   handleClick = () => {
-    this.setState(
-      {
-        isChecked: !this.state.isChecked
-      },
-      () => {
-        this.props.onChange(this.state.isChecked);
-      }
+    this.props.onChange(
+      !this.props.value,
+      this.props.resource,
+      this.props._key
     );
   };
+
   render() {
     return (
-      <Box checked={this.state.isChecked} onClick={this.handleClick}>
-        <Slider checked={this.state.isChecked}>
+      <Box
+        checked={this.props.value}
+        id={this.props.forId}
+        onClick={this.handleClick}
+      >
+        <Slider checked={this.props.value}>
           <svg
             className="cross"
             xmlns="http://www.w3.org/2000/svg"

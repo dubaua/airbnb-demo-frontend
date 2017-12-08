@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "../../CommonStyles";
+import { Lg } from "../../UI/Media";
 import { Wrapper, Overlay } from "./styled";
 import Dates from "./Dates";
 import Guests from "./Guests";
@@ -132,9 +133,19 @@ class Filters extends React.Component {
     });
   };
 
-  applyMore = (roomsAndBeds, superHost, amenities, facilities) => {
-    console.log(roomsAndBeds, superHost, amenities, facilities);
+  applyMore = (
+    roomType,
+    priceRange,
+    instantBook,
+    roomsAndBeds,
+    superHost,
+    amenities,
+    facilities
+  ) => {
     this.setState({
+      roomType: roomType,
+      priceRange: priceRange,
+      instantBook: instantBook,
       roomsAndBeds: roomsAndBeds,
       superHost: superHost,
       amenities: amenities,
@@ -161,28 +172,33 @@ class Filters extends React.Component {
             currentFilter={this.state.currentFilter}
             toggleFilter={this.toggleFilter}
           />
-          <RoomType
-            roomType={this.state.roomType}
-            onApply={this.applyRoomTypes}
-            filterId="rooms"
-            currentFilter={this.state.currentFilter}
-            toggleFilter={this.toggleFilter}
-          />
-          <Price
-            priceRange={this.state.priceRange}
-            onApply={this.applyPrice}
-            filterId="price"
-            currentFilter={this.state.currentFilter}
-            toggleFilter={this.toggleFilter}
-          />
-          <InstantBook
-            instantBook={this.state.instantBook}
-            onApply={this.applyInstantBook}
-            filterId="instantBook"
-            currentFilter={this.state.currentFilter}
-            toggleFilter={this.toggleFilter}
-          />
+          <Lg>
+            <RoomType
+              roomType={this.state.roomType}
+              onApply={this.applyRoomTypes}
+              filterId="rooms"
+              currentFilter={this.state.currentFilter}
+              toggleFilter={this.toggleFilter}
+            />
+            <Price
+              priceRange={this.state.priceRange}
+              onApply={this.applyPrice}
+              filterId="price"
+              currentFilter={this.state.currentFilter}
+              toggleFilter={this.toggleFilter}
+            />
+            <InstantBook
+              instantBook={this.state.instantBook}
+              onApply={this.applyInstantBook}
+              filterId="instantBook"
+              currentFilter={this.state.currentFilter}
+              toggleFilter={this.toggleFilter}
+            />
+          </Lg>
           <More
+            roomType={this.state.roomType}
+            priceRange={this.state.priceRange}
+            instantBook={this.state.instantBook}
             roomsAndBeds={this.state.roomsAndBeds}
             superHost={this.state.superHost}
             amenities={this.state.amenities}

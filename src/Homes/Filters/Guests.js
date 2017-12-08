@@ -1,18 +1,22 @@
 import React from "react";
-import { Dropdown, Toggle, Content, Button, Controls } from "./styled";
+import {
+  Dropdown,
+  Toggle,
+  Content,
+  Header,
+  Cross,
+  Reset,
+  Filters,
+  Filter,
+  Footer,
+  Button,
+  Controls
+} from "./styled";
+import { Row, Col } from "react-flexbox-grid";
+import { ToMd, Md } from "../../UI/Media";
 import Counter from "../../UI/Counter";
 import styled from "styled-components";
-const Filters = styled.div`
-  padding: 30px 24px;
-`;
-const Filter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-`;
+
 const Label = styled.div`
   width: 180px;
 `;
@@ -61,16 +65,20 @@ class Guests extends React.Component {
     this.props.onApply(this.state.guests);
   };
 
-  onCancel = () => {
+  onReset = () => {
     this.setState(
       {
         guests: this.props.guests
       },
       () => {
         this.updateLabel(this.state.guests);
-        this.props.toggleFilter(null);
       }
     );
+  };
+
+  onCancel = () => {
+    this.onReset();
+    this.props.toggleFilter(null);
   };
 
   onToggle = () => {
@@ -88,6 +96,30 @@ class Guests extends React.Component {
         </Toggle>
         {this.props.currentFilter === this.props.filterId && (
           <Content>
+            <ToMd>
+              <Header>
+                <Row middle="xs">
+                  <Col xs={2}>
+                    <Cross onClick={this.onCancel}>
+                      <svg
+                        width="16"
+                        height="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.33335 14.00005c.4.4.4 1.0666 0 1.4666-.4.4-1.0667.4-1.4667 0L8.00002 9.46668l-6 5.99997c-.4.4-1.06667.4-1.46667 0-.4-.4-.4-1.0666 0-1.4666l6-6.00003-5.866667-6c-.3999997-.4-.3999997-1.06667 0-1.46667.4-.4 1.066667-.4 1.466667 0l5.86667 6 6.00003-6c.4-.4 1.0666-.4 1.4666 0 .4.4.4 1.06667 0 1.46667l-5.99997 6 5.86667 6.00003z"
+                          fill="#484848"
+                        />
+                      </svg>
+                    </Cross>
+                  </Col>
+                  <Col xs={8}>{this.state.label}</Col>
+                  <Col xs={2}>
+                    <Reset onClick={this.onReset}>Reset</Reset>
+                  </Col>
+                </Row>
+              </Header>
+            </ToMd>
             <Filters>
               <Filter>
                 <Label>
@@ -131,10 +163,19 @@ class Guests extends React.Component {
                 />
               </Filter>
             </Filters>
-            <Controls>
-              <Button onClick={this.onCancel}>Cancel</Button>
-              <Button onClick={this.onApply}>Apply</Button>
-            </Controls>
+            <Md>
+              <Controls>
+                <Button onClick={this.onCancel}>Cancel</Button>
+                <Button onClick={this.onApply}>Apply</Button>
+              </Controls>
+            </Md>
+            <ToMd>
+              <Footer>
+                <Button primary full onClick={this.onApply}>
+                  Save
+                </Button>
+              </Footer>
+            </ToMd>
           </Content>
         )}
       </Dropdown>

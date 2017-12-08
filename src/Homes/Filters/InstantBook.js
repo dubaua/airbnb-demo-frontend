@@ -1,27 +1,24 @@
 import React from "react";
-import { Dropdown, Toggle, Content, Button, Controls } from "./styled";
+import {
+  Dropdown,
+  Toggle,
+  Content,
+  Filter,
+  Label,
+  Sublabel,
+  Button,
+  Controls
+} from "./styled";
 import SlideToggle from "../../UI/SlideToggle";
 import styled from "styled-components";
 
-const Filter = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  padding: 24px 16px;
+const InstantBookFilter = styled(Filter)`
+  padding: 24px 16px 0;
+  width: 280px;
 `;
 
-const Label = styled.div`
+const InstantBookLabel = styled(Label)`
   width: 200px;
-`;
-
-const Title = styled.div`
-  font-size: 18px;
-`;
-
-const Subtitle = styled.div`
-  font-size: 14px;
-  font-weight: lighter;
-  margin-top: 4px;
 `;
 
 class Price extends React.Component {
@@ -31,7 +28,6 @@ class Price extends React.Component {
   };
 
   onInstantBookChange = instantBook => {
-    console.log(instantBook);
     const label = instantBook ? "Instant book: on" : "Instant book: off";
     this.setState({
       instantBook: instantBook,
@@ -70,18 +66,19 @@ class Price extends React.Component {
         </Toggle>
         {this.props.currentFilter === this.props.filterId && (
           <Content>
-            <Filter>
-              <Label>
-                <Title>Instant Book</Title>
-                <Subtitle>
+            <InstantBookFilter>
+              <InstantBookLabel htmlFor="instantBook">
+                Instant Book
+                <Sublabel>
                   Listings you can book without waiting for host approval.
-                </Subtitle>
-              </Label>
+                </Sublabel>
+              </InstantBookLabel>
               <SlideToggle
+                forId="instantBook"
                 value={this.props.instantBook}
                 onChange={this.onInstantBookChange}
               />
-            </Filter>
+            </InstantBookFilter>
             <Controls>
               <Button onClick={this.onCancel}>Cancel</Button>
               <Button onClick={this.onApply}>Apply</Button>

@@ -52,6 +52,12 @@ class Counter extends React.Component {
     value: this.props.value
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      value: nextProps.value
+    });
+  }
+
   decrement = () => {
     if (this.state.value - 1 >= this.props.min) this.change(-1);
   };
@@ -86,6 +92,7 @@ class Counter extends React.Component {
         </Button>
         <Count>{this.state.value}</Count>
         <Button
+          id={this.props.forId}
           onClick={this.increment}
           disabled={this.state.value >= this.props.max}
           increment

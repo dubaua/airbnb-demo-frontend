@@ -11,6 +11,11 @@ const Page = styled.div`
   font-family: "Circular Air", Helvetica, Arial, sans-serif;
   color: #383838;
   padding-top: 81px;
+
+  & :focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px #008489;
+  }
 `;
 
 class App extends Component {
